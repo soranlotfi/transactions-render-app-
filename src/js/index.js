@@ -35,13 +35,18 @@ dateSortIcon.addEventListener("click" , ()=>{
 searchInput.addEventListener("focus" , ()=>{
     !searchIcon.classList.contains("search-animate") ? searchIcon.classList.add("search-animate") : searchIcon.classList.remove("search-animate")
 })
-searchInput.addEventListener("input" , (e)=>{
+searchInput.addEventListener("input" , async (e)=>{
     const api = new Api()
-    api.filterTransaction({refId:e.target.value})
+    const ui = new Ui()
+    if(e.target.value===""){
+        let transactions =await api.getTransactions()
+        ui.renderTransactions(transactions.data)
+    }else {
+        api.filterTransaction({refId:e.target.value})
+    }
 })
 class Ui{
     renderTransactions(transactions){
-        console.log(transactions)
         let result = transactions.map((transaction) =>{
             return `
              <tr class="table-body-row">
