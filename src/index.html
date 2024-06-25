@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>تسک دوره جاوااسکریپت</title>
+        <link rel="stylesheet" href="./styles/index.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+              integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+              crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    </head>
+    <header>
+        <div class="container">
+            <div class="header-title-container">
+                <h3 class="header-title">لیست تراکنش ها</h3>
+                <!--        search input container-->
+                <div class="search-input-container">
+                    <i class="fa fa-search"></i>
+                    <input class="search-input" placeholder="جستجوی تراکنش"/>
+                </div>
+            </div>
+        </div>
+    </header>
+    <body>
+        <div class="container">
+            <div class="show-transactions-button-container">
+                <button class="show-transactions-btn">بارگذاری تراکنش ها</button>
+            </div>
+
+            <!--      transactions table -->
+            <div class="table-container">
+                <table class="transactions-table">
+                    <thead>
+                        <tr class="table-head-row">
+                            <th class="table-head-cell" scope="col">ردیف</th>
+                            <th class="table-head-cell" scope="col">نوع تراکنش</th>
+                            <th class="table-head-cell transaction-price-cell" scope="col">
+                                <span>مبلغ</span>
+                                <i class="price-sort-icon fa fa-chevron-up"></i>
+                            </th>
+                            <th class="table-head-cell" scope="col">شماره پیگیری</th>
+                            <th class="table-head-cell transaction-date-cell" scope="col">
+                                <span>تاریخ تراکنش</span>
+                                <i class="price-sort-icon fa fa-chevron-down"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <!-- Additional table body content goes here -->
+                    <tbody class="transactions-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js" integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>
