@@ -27,7 +27,7 @@ class Ui{
                                 ${transaction.price.toLocaleString()}
                             </th>
                             <th class="table-body-cell" scope="col">${transaction.refId}</th>
-                            <th class="table-body-cell transaction-date-cell" scope="col"> ${transaction.date}</th>
+                            <th class="table-body-cell transaction-date-cell" scope="col"> ${Date.dateConvert(transaction.date)}</th>
                         </tr>
             `
         })
@@ -49,15 +49,20 @@ class Api{
 }
 
 class Date{
-    options = {
+    static options = {
             year: "numeric",
             month: "long",
             day: "numeric",
-            weekday: "long",
+            // weekday: "long",
             hour:"numeric",
             minute:"numeric"
     }
     static dateConvert(transactionDate){
-        const date = new Date(transactionDate.toISOString("fa-IR" , this.options))
+        console.log(transactionDate)
+        const localDate = new Date(transactionDate)
+        const convertedDate = (Intl.DateTimeFormat("fa-IR" , Date.options).format(transactionDate))
+
+        /*console.log(date)*/
+        return `${convertedDate}`
     }
 }
