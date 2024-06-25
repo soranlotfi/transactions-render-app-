@@ -188,6 +188,31 @@ table{
 
 .table-body-cell{
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-family: Vazirmatn;
+  border-bottom: 3px solid var(--color-primary-200);
+}
+
+
+
+.rotate{
+  transform: rotateZ(180deg);
+}
+
+.price-sort-icon ,
+.date-sort-icon{
+  transition: all .3s ease-in-out;
+}
+
+
+
+@keyframes searchAnimate {
+  0%   {scale: 1;}
+  25%   {scale: 1.4;}
+  50%   {scale: 1.5;}
+  100%  {scale: 1;}
+}
+
+.search-animate{
+  animation: searchAnimate 1s linear 0s 1 alternate;
 }
